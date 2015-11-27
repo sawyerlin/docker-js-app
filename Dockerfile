@@ -1,12 +1,7 @@
 FROM centos:7
 MAINTAINER Sawyer LIN <sawyer.lin@gmail.com>
 
-RUN yum install -y epel-release
-RUN yum install -y nodejs npm
+RUN https://nodejs.org/dist/v5.1.0/node-v5.1.0-linux-x64.tar.gz
+RUN yum -y install nodejs gcc-c++ make
 
-EXPOSE 8080 443
-
-WORKDIR /opt/app
-CMD ["bower", "install"]
-CMD ["npm", "install"]
-CMD ["npm", "start"]
+EXPOSE 80 443
